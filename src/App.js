@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import logo from "./logo.svg";
 import MapContainer from "./Map";
 import MyMapComponent from "./MapAlt";
+import ShopList from "./ShopList.jsx";
+import ListContainer from "./ListContainer";
 import "./App.css";
 
 const repairShops = [
@@ -12,6 +14,7 @@ const repairShops = [
       lat: 37.787519,
       lng: -122.41,
     },
+    img: "/marker.jpg",
   },
   {
     name: "Repair Shop 2",
@@ -20,6 +23,7 @@ const repairShops = [
       lat: 37.75,
       lng: -122.42,
     },
+    img: "/marker.jpg",
   },
   {
     name: "Repair Shop 3",
@@ -28,27 +32,9 @@ const repairShops = [
       lat: 37.797,
       lng: -122.40564,
     },
+    img: "/marker.jpg",
   },
 ];
-
-function ShopList(props) {
-  const shops = props.repairShops;
-  const handleClick = (evt) => {
-    const shopName = evt.currentTarget.dataset.name;
-    const shop = shops.find(x => x.name === shopName);
-    return props.onClickFunction(shop)
-  };
-  const listItems = shops.map((shop) => (
-    <li key={shop.name}>
-      <button className={(shop==props.activeShop) ? "active" : null} onClick={handleClick} data-name={shop.name}>
-        {shop.name}
-        <br />
-        {shop.address}
-      </button>
-    </li>
-  ));
-  return <ul>{listItems}</ul>;
-}
 
 function Display({activeShop:{name, address}}) {
   // const {activeShop:{name, address}} = props;
@@ -92,12 +78,17 @@ function App() {
             activeShop={activeShop}
             onClickFunction={setActiveShop}
           ></MapContainer>
-          <ShopList
+          {/* <ShopList
             onClickFunction={setActiveShop}
             activeShop={activeShop}
             repairShops={repairShops}
           ></ShopList>
-          <Display activeShop={activeShop}/>
+          <Display activeShop={activeShop}/> */}
+          <ListContainer 
+            onClickFunction={setActiveShop}
+            activeShop={activeShop}
+            repairShops={repairShops}>
+          </ListContainer>
           {/* <MyMapComponent></MyMapComponent> */}
         </div>
       </body>
