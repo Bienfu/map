@@ -6,7 +6,7 @@ function ListItemText(props) {
     
     return (
       <div class="ListItemText">
-        <p>{address}</p>
+        <h5>{address}</h5>
       </div>
     );
   }

@@ -13,6 +13,8 @@
   }
 }
 
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -60,7 +62,7 @@ button:hover {
 }
 
 .active {
-  background-color: #12cc49;
+  background-color:#555;
   color: black;
 }
 
@@ -69,26 +71,117 @@ ul {
 }
 
 .ListItem{
-  width: 600px;
+  width: 400px;
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  grid-template-rows: 80px 200px;
-  margin: 20px;
+  grid-template-columns: 100px 100px 100px 100px ;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "avatar avatar header header"
+    "avatar avatar address address"
+    "avatar avatar rating rating"
+    "expand footer footer footer";
+  margin: 10px 0px 0px 10px;
   border-style: solid;
   border-color: black;
 }
 
+.Avatar.ListItemTitle.ListItemText {
+  background-color: #e7e7e7;
+  color: black;
+}
+
+.Avatar.ListItemTitle.ListItemText:hover {
+  background-color: #282c34;
+  color: white;
+}
+
 .Avatar{
-  grid-column: 1/3;
-  grid-row: 1/ span 2;
+  grid-area: avatar;
+}
+
+.AvatarImage{
+  height: 200px;
+  width: 200px;
 }
 
 .ListItemTitle{
-  grid-column: 3 / 6;
-  grid-row: 1;
+  grid-area: header;
 }
 
-.listItemText{
-  grid-column: 3 / 6;
-  grid-row: 2;
+.ListItemText{
+  grid-area: address;
+}
+
+.showRatingButton{
+  grid-area: expand;
+  width: 50px;
+  height: 50px;
+  font-size: 10px;
+}
+
+.overallRating{
+  grid-area: rating;
+}
+
+.star {
+  font-size: x-large;
+  width: 25px;
+  display: inline-block;
+  color: gray;
+}
+.star:last-child {
+  margin-right: 0;
+}
+.star:before {
+  content:'\2605';
+}
+.star.on {
+  color: gold;
+}
+.star.half:after {
+  content:'\2605';
+  color: gold;
+  position: absolute;
+  margin-left: -20px;
+  width: 10px;
+  overflow: hidden;
+}
+
+.ListItemUserRatings{
+  grid-area: footer;
+}
+
+.userRating-userName{
+  grid-area: userName;
+  margin-top: 14px;
+  justify-self: baseline;
+}
+
+.userRating-userRating{
+  grid-area: userRating;
+}
+
+.userRating-review{
+  grid-area: userReview;
+  margin-bottom: 10px;
+}
+
+.userRating{
+  border-style: solid;
+  border-color: black;
+  background-color: white;
+  margin: 3px;
+  display: grid;
+  grid-template-columns: 50px 100px 100px ;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "userAvatar userName userName"
+    "userRating userRating userRating"
+    "userReview userReview userReview";
+}
+
+.UserAvatarImage{
+  grid-area: userAvatar;
+  height:50px;
+  width: 50px;
 }

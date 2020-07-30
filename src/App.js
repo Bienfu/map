@@ -14,7 +14,27 @@ const repairShops = [
       lat: 37.787519,
       lng: -122.41,
     },
-    img: "/marker.jpg",
+    img: "/logo192.png",
+    rating: 3.5,
+    userRatings: [
+      {
+        userName: "Mike",
+        review: "Got my stuff fixed right away!",
+        rating: 5
+
+      },
+      {
+        userName: "Mark",
+        review: "They stole my car!!!",
+        rating: 1
+      },
+      {
+        userName: "Yoda",
+        review: "Passible service it was.",
+        rating: 3
+
+      }
+    ],
   },
   {
     name: "Repair Shop 2",
@@ -23,7 +43,27 @@ const repairShops = [
       lat: 37.75,
       lng: -122.42,
     },
-    img: "/marker.jpg",
+    img: "/logo192.png",
+    rating: 2.0,
+    userRatings: [
+      {
+        userName: "Mike",
+        review: "Got my stuff fixed right away!",
+        rating: 5
+
+      },
+      {
+        userName: "Mark",
+        review: "They stole my car!!!",
+        rating: 1
+      },
+      {
+        userName: "Yoda",
+        review: "Passible service it was.",
+        rating: 3
+
+      }
+    ],
   },
   {
     name: "Repair Shop 3",
@@ -32,7 +72,27 @@ const repairShops = [
       lat: 37.797,
       lng: -122.40564,
     },
-    img: "/marker.jpg",
+    img: "/logo192.png",
+    rating: 5.0,
+    userRatings: [
+      {
+        userName: "Mike",
+        review: "Got my stuff fixed right away!",
+        rating: 5
+
+      },
+      {
+        userName: "Mark",
+        review: "They stole my car!!!",
+        rating: 1
+      },
+      {
+        userName: "Yoda",
+        review: "Passible service it was.",
+        rating: 3
+
+      }
+    ],
   },
 ];
 

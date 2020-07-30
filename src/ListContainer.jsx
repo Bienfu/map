@@ -11,7 +11,7 @@ function ListContainer(props) {
     };
     const listItems = shops.map((shop) => (
       <li key={shop.name} onClick={handleClick} data-name={shop.name}>
-          <ListItem className={(shop==props.activeShop) ? "active" : null} shop={shop}></ListItem>
+          <ListItem shop={shop} activeShop={props.activeShop}></ListItem>
       </li>
     ));
     return <ul>{listItems}</ul>;
