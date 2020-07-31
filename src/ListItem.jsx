@@ -9,7 +9,7 @@ import ListItemUserRatings from "./ListItemUserRatings";
 function ListItem(props) {
     const shop = props.shop;
     const [toggleRating, showRating] = useState(false);
-    const buttonIcon = (toggleRating) ? "^" : "v";
+    const buttonIcon = (toggleRating) ? "fas fa-angle-up" : "fas fa-angle-down";
     // const butonToggle = () => showRating(!toggleRating);
     const handleClick = (evt) => {
       evt.stopPropagation();
@@ -22,7 +22,7 @@ function ListItem(props) {
         <ListItemTitle name={shop.name}/>
         <ListItemText address={shop.address}/>
         <ListItemRating rating={shop.rating} className={"overallRating"}/>
-        <button className="showRatingButton" onClick={handleClick}>{buttonIcon}</button>
+        <i className="howRatingButton" class={buttonIcon}  onClick={handleClick}/>
         {ratings}
       </div>
     );

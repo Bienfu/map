@@ -14,7 +14,7 @@ function ListContainer(props) {
           <ListItem shop={shop} activeShop={props.activeShop}></ListItem>
       </li>
     ));
-    return <ul>{listItems}</ul>;
+    return <ul class="ListContainer">{listItems}</ul>;
   }
 
 export default ListContainer;

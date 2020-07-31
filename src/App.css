@@ -40,7 +40,16 @@
 }
 
 .content{
-  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+@media (min-width: 1000px) {
+  .content{
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 button {
@@ -62,27 +71,39 @@ button:hover {
 }
 
 .active {
-  background-color:#555;
-  color: black;
+  background-color: rgb(181, 190, 209);
 }
+
+.ListItem:hover {
+  background-color: rgb(226, 229, 235);
+}
+
 
 ul {
   list-style-type: none;
 }
 
+
+
+.ListContainer{
+  height: 500px;
+  overflow: auto;
+}
+
 .ListItem{
   width: 400px;
   display: grid;
-  grid-template-columns: 100px 100px 100px 100px ;
+  grid-template-columns: 50px auto ;
   grid-template-rows: auto;
   grid-template-areas: 
     "avatar avatar header header"
     "avatar avatar address address"
     "avatar avatar rating rating"
-    "expand footer footer footer";
+    "expand . . ."
+    "footer footer footer footer";
   margin: 10px 0px 0px 10px;
   border-style: solid;
-  border-color: black;
+  /* border-color: black; */
 }
 
 .Avatar.ListItemTitle.ListItemText {
@@ -114,9 +135,7 @@ ul {
 
 .showRatingButton{
   grid-area: expand;
-  width: 50px;
-  height: 50px;
-  font-size: 10px;
+  justify-self: start;
 }
 
 .overallRating{
@@ -124,6 +143,7 @@ ul {
 }
 
 .star {
+  position: relative;
   font-size: x-large;
   width: 25px;
   display: inline-block;
@@ -167,21 +187,26 @@ ul {
 }
 
 .userRating{
-  border-style: solid;
+  border-top: solid;
   border-color: black;
   background-color: white;
-  margin: 3px;
+  margin: 0px;
   display: grid;
-  grid-template-columns: 50px 100px 100px ;
+  grid-template-columns: 50px auto ;
   grid-template-rows: auto;
   grid-template-areas: 
-    "userAvatar userName userName"
-    "userRating userRating userRating"
-    "userReview userReview userReview";
+    "userAvatar userName userName . ."
+    ". userRating userRating userRating userRating"
+    ". userReview userReview userReview userReview";
 }
 
 .UserAvatarImage{
   grid-area: userAvatar;
   height:50px;
   width: 50px;
+}
+
+.UserRatingsTitle{
+  text-align: initial;
+  margin: 5px 0px 5px 20px;
 }

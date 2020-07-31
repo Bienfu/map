@@ -26,7 +26,7 @@ function ListItemRating(props) {
   return (
     <div className={cx("ListItemRating", className)   }>
       <div class="stars">
-        <p>Rating: {rating} out of 5</p>
+        <div>Rating: {rating} out of 5</div>
         <div>{ratingDisplay}</div>
         {/* <p> {rating} out of 5</p> */}
       </div>

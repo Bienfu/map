@@ -6,14 +6,19 @@ function ListItemUserRatings(props) {
 
   const userReviews = ratings.map((rating) => (
     <div class="userRating">
-    <img class="UserAvatarImage" src={"/avatar.jpg"}/>
-      <div class="userRating-userName">Username: {rating.userName}</div>
-      <ListItemRating rating={rating.rating} className="userRating-userRating"></ListItemRating>
-      <div class="userRating-review">Review: {rating.review}</div>
+      <img class="UserAvatarImage" src={"/avatar.jpg"} />
+      <div class="userRating-userName">{rating.userName}</div>
+      <ListItemRating
+        rating={rating.rating}
+        className="userRating-userRating"
+      ></ListItemRating>
+      <div class="userRating-review">{rating.review}</div>
     </div>
   ));
-  return <div class="ListItemUserRatings">{userReviews}</div>;
-
+  return <div class="ListItemUserRatings">
+            <div class="UserRatingsTitle">User Ratings</div>  
+            {userReviews}
+          </div>;
 }
 
 export default ListItemUserRatings;
