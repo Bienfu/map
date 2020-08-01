@@ -4,12 +4,12 @@ import ListItemTitle from "./ListItemTitle";
 import ListItemText from "./ListItemText";
 import ListItemRating from "./ListItemRating";
 import ListItemUserRatings from "./ListItemUserRatings";
-
+import cx from "classnames";
 
 function ListItem(props) {
     const shop = props.shop;
     const [toggleRating, showRating] = useState(false);
-    const buttonIcon = (toggleRating) ? "fas fa-angle-up" : "fas fa-angle-down";
+    const buttonImage = (toggleRating) ? "fas fa-angle-up" : "fas fa-angle-down";
     // const butonToggle = () => showRating(!toggleRating);
     const handleClick = (evt) => {
       evt.stopPropagation();
@@ -22,7 +22,10 @@ function ListItem(props) {
         <ListItemTitle name={shop.name}/>
         <ListItemText address={shop.address}/>
         <ListItemRating rating={shop.rating} className={"overallRating"}/>
-        <i className="howRatingButton" class={buttonIcon}  onClick={handleClick}/>
+        <div className="UserRatingsButton" onClick={handleClick}> 
+        <i className={cx("showRatingButton", buttonImage)}/>
+        <div className="UserRatingsTitle">User Ratings</div> 
+        </div>
         {ratings}
       </div>
     );

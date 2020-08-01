@@ -24,11 +24,10 @@ function ListItemRating(props) {
     ratingDisplay.push(<span class="star"></span>);
   }
   return (
-    <div className={cx("ListItemRating", className)   }>
-      <div class="stars">
-        <div>Rating: {rating} out of 5</div>
-        <div>{ratingDisplay}</div>
-        {/* <p> {rating} out of 5</p> */}
+    <div className={cx("ListItemRating", className)}>
+      <div class="starsGrid">
+        <div className="stars">{ratingDisplay}</div>
+        <div className="ratingNumber">({rating})</div>
       </div>
     </div>
   );

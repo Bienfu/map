@@ -5,8 +5,8 @@ export class MapContainer extends Component {
   render() {
     const containerStyle = {
       position: "relative",
-      width: "500px",
-      height: "500px",
+      width: "600px",
+      height: "600px",
     };
     const shops = this.props.repairShops;
     const mapCenter = this.props.activeShop.position;

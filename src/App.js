@@ -8,8 +8,8 @@ import "./App.css";
 
 const repairShops = [
   {
-    name: "Repair Shop 1",
-    address: "Address 1",
+    name: "Worldwide Corporate Headquarters",
+    address: "The Landmark @ One Market, San Francisco, CA",
     position: {
       lat: 37.787519,
       lng: -122.41,
@@ -37,8 +37,8 @@ const repairShops = [
     ],
   },
   {
-    name: "Repair Shop 2",
-    address: "Address 2",
+    name: "salesforce.com inc Atlanta",
+    address: "950 East Paces Ferry Road NE, Atlanta, GA",
     position: {
       lat: 37.75,
       lng: -122.42,
@@ -66,8 +66,95 @@ const repairShops = [
     ],
   },
   {
-    name: "Repair Shop 3",
-    address: "Address 3",
+    name: "salesforce.com inc Bellevue",
+    address: "500 Boylston Street 19th Floor, Boston, MA",
+    position: {
+      lat: 37.797,
+      lng: -122.40564,
+    },
+    img: "/logo192.png",
+    rating: 5.0,
+    userRatings: [
+      {
+        userName: "Mike",
+        review: "Got my stuff fixed right away!",
+        rating: 5
+
+      },
+      {
+        userName: "Mark",
+        review: "They stole my car!!!",
+        rating: 1
+      },
+      {
+        userName: "Yoda",
+        review: "Passible service it was.",
+        rating: 3
+
+      }
+    ],
+  },
+  {
+    name: "Worldwide Corporate Headquarters",
+    address: "The Landmark @ One Market, San Francisco, CA",
+    position: {
+      lat: 37.787519,
+      lng: -122.41,
+    },
+    img: "/logo192.png",
+    rating: 3.5,
+    userRatings: [
+      {
+        userName: "Mike",
+        review: "Got my stuff fixed right away!",
+        rating: 5
+
+      },
+      {
+        userName: "Mark",
+        review: "They stole my car!!!",
+        rating: 1
+      },
+      {
+        userName: "Yoda",
+        review: "Passible service it was.",
+        rating: 3
+
+      }
+    ],
+  },
+  {
+    name: "salesforce.com inc Atlanta",
+    address: "950 East Paces Ferry Road NE, Atlanta, GA",
+    position: {
+      lat: 37.75,
+      lng: -122.42,
+    },
+    img: "/logo192.png",
+    rating: 2.0,
+    userRatings: [
+      {
+        userName: "Mike",
+        review: "Got my stuff fixed right away!",
+        rating: 5
+
+      },
+      {
+        userName: "Mark",
+        review: "They stole my car!!!",
+        rating: 1
+      },
+      {
+        userName: "Yoda",
+        review: "Passible service it was.",
+        rating: 3
+
+      }
+    ],
+  },
+  {
+    name: "salesforce.com inc Bellevue",
+    address: "500 Boylston Street 19th Floor, Boston, MA",
     position: {
       lat: 37.797,
       lng: -122.40564,

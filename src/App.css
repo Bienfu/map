@@ -39,18 +39,14 @@
   }
 }
 
-.content{
+.content {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-gap: 1rem;
+  /* max-width: 600px; */
 }
 
-@media (min-width: 1000px) {
-  .content{
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
 button {
   background-color: #e7e7e7;
@@ -78,31 +74,39 @@ button:hover {
   background-color: rgb(226, 229, 235);
 }
 
-
 ul {
   list-style-type: none;
 }
 
 
-
-.ListContainer{
-  height: 500px;
-  overflow: auto;
+.ListContainer {
+  padding: 0px 10px;
+  display: grid;
 }
 
-.ListItem{
-  width: 400px;
+.ListContainerTitle {
+  text-align: initial;
+  padding: 0px 0px 0px 80px;
+}
+
+.ListItemsContainer {
+  overflow: auto;
   display: grid;
-  grid-template-columns: 50px auto ;
+  grid-gap: 5px;
+  max-width: 600px;
+}
+
+.ListItem {
+  display: grid;
+  grid-template-columns: 70px auto;
   grid-template-rows: auto;
-  grid-template-areas: 
-    "avatar avatar header header"
-    "avatar avatar address address"
-    "avatar avatar rating rating"
-    "expand . . ."
-    "footer footer footer footer";
-  margin: 10px 0px 0px 10px;
+  grid-template-areas:
+  "avatar header header"
+  "avatar address address"
+  ". expand rating"
+  ". footer footer";
   border-style: solid;
+  padding: 10px;
   /* border-color: black; */
 }
 
@@ -116,30 +120,72 @@ ul {
   color: white;
 }
 
-.Avatar{
+.Avatar {
   grid-area: avatar;
 }
 
-.AvatarImage{
-  height: 200px;
-  width: 200px;
+.AvatarImage {
+  height: 50px;
+  width: 50px;
+  padding: 0 5px 0 0;
 }
 
-.ListItemTitle{
+.ListItemTitle {
   grid-area: header;
+  font-size: 0.75em;
+  font-style: italic;
+  color: rgb(113, 146, 207);
+  justify-self: baseline;
 }
 
-.ListItemText{
+h2 {
+  margin: 0;
+}
+
+h5 {
+  margin: 0;
+}
+
+.ListItemText {
   grid-area: address;
+  justify-self: baseline;
 }
 
-.showRatingButton{
+.showRatingButton {
+  padding: 0 10px 0 0;
+}
+
+.UserRatingsTitle {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+
+.UserRatingsButton{
+  justify-self: baseline;
+  padding: 5px 0 0 0;
   grid-area: expand;
-  justify-self: start;
+  display: inline;
 }
 
-.overallRating{
+.overallRating {
   grid-area: rating;
+}
+
+.starsGrid{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+}
+
+.stars{
+  text-align: center;
+  padding: 0 0 0 170px;
+  /* display: inline-block; */
+}
+
+.ratingNumber{
+  display: inline;
+  padding: 7px 0;
 }
 
 .star {
@@ -153,13 +199,13 @@ ul {
   margin-right: 0;
 }
 .star:before {
-  content:'\2605';
+  content: "\2605";
 }
 .star.on {
   color: gold;
 }
 .star.half:after {
-  content:'\2605';
+  content: "\2605";
   color: gold;
   position: absolute;
   margin-left: -20px;
@@ -167,46 +213,61 @@ ul {
   overflow: hidden;
 }
 
-.ListItemUserRatings{
+.ListItemUserRatings {
   grid-area: footer;
 }
 
-.userRating-userName{
+.userRating-userName {
   grid-area: userName;
   margin-top: 14px;
   justify-self: baseline;
+  font-weight: 700;
 }
 
-.userRating-userRating{
+.userRating-userRating {
   grid-area: userRating;
 }
 
-.userRating-review{
+.userRating-review {
   grid-area: userReview;
   margin-bottom: 10px;
 }
 
-.userRating{
+.userRating {
   border-top: solid;
-  border-color: black;
+  border-color: rgb(180, 178, 178);
   background-color: white;
   margin: 0px;
   display: grid;
-  grid-template-columns: 50px auto ;
+  grid-template-columns: 50px auto;
   grid-template-rows: auto;
-  grid-template-areas: 
-    "userAvatar userName userName . ."
-    ". userRating userRating userRating userRating"
-    ". userReview userReview userReview userReview";
+  grid-template-areas:
+  "userAvatar userName userRating"
+  ". userReview   userReview";
+  margin-bottom: 0.5em;
 }
 
-.UserAvatarImage{
+.userRating-reviewText{
+  display: inline;
+  padding: 10px;
+}
+
+.UserAvatarImage {
   grid-area: userAvatar;
-  height:50px;
+  height: 50px;
   width: 50px;
 }
 
-.UserRatingsTitle{
-  text-align: initial;
-  margin: 5px 0px 5px 20px;
+@media (min-width: 1200px) {
+  .content {
+    max-height: 500px;
+    grid-template-columns: auto 1fr;
+  }
+  .ListItemsContainer {
+    overflow: auto;
+    display: grid;
+    grid-gap: 5px;
+    max-height: 500px;
+    min-width: 500px;
+  }
 }

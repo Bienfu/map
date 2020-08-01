@@ -10,11 +10,16 @@ function ListContainer(props) {
       return props.onClickFunction(shop)
     };
     const listItems = shops.map((shop) => (
-      <li key={shop.name} onClick={handleClick} data-name={shop.name}>
+      <div key={shop.name} onClick={handleClick} data-name={shop.name}>
           <ListItem shop={shop} activeShop={props.activeShop}></ListItem>
-      </li>
+      </div>
     ));
-    return <ul class="ListContainer">{listItems}</ul>;
+    return (
+            <div className="ListContainer">
+              <h1 className="ListContainerTitle">Automotive Repair Shops</h1>
+              <div className="ListItemsContainer">{listItems}</div>
+            </div>
+           );
   }
 
 export default ListContainer;
