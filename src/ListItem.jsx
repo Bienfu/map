@@ -7,6 +7,7 @@ import ListItemUserRatings from "./ListItemUserRatings";
 import cx from "classnames";
 
 function ListItem(props) {
+    const index =props.index+1;
     const shop = props.shop;
     const [toggleRating, showRating] = useState(false);
     const buttonImage = (toggleRating) ? "fas fa-angle-up" : "fas fa-angle-down";
@@ -18,7 +19,7 @@ function ListItem(props) {
     const ratings = (toggleRating) ? <ListItemUserRatings userRatings={shop.userRatings}></ListItemUserRatings> : null;
     return (
       <div className={(shop==props.activeShop) ? "active ListItem" : "ListItem"} class="ListItem">
-        <Avatar img={shop.img}></Avatar>
+        <Avatar img={index}></Avatar>
         <ListItemTitle name={shop.name}/>
         <ListItemText address={shop.address}/>
         <ListItemRating rating={shop.rating} className={"overallRating"}/>

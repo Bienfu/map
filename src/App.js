@@ -95,10 +95,10 @@ const repairShops = [
     ],
   },
   {
-    name: "Worldwide Corporate Headquarters",
+    name: "Worldnarrow Corporate Headquarters",
     address: "The Landmark @ One Market, San Francisco, CA",
     position: {
-      lat: 37.787519,
+      lat: 37.783519,
       lng: -122.41,
     },
     img: "/logo192.png",
@@ -124,11 +124,11 @@ const repairShops = [
     ],
   },
   {
-    name: "salesforce.com inc Atlanta",
+    name: "salesforce.com inc Detroit",
     address: "950 East Paces Ferry Road NE, Atlanta, GA",
     position: {
       lat: 37.75,
-      lng: -122.42,
+      lng: -122.41,
     },
     img: "/logo192.png",
     rating: 2.0,
@@ -153,11 +153,11 @@ const repairShops = [
     ],
   },
   {
-    name: "salesforce.com inc Bellevue",
+    name: "salesforce.com inc California",
     address: "500 Boylston Street 19th Floor, Boston, MA",
     position: {
       lat: 37.797,
-      lng: -122.40564,
+      lng: -122.404,
     },
     img: "/logo192.png",
     rating: 5.0,

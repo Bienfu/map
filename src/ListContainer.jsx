@@ -9,9 +9,9 @@ function ListContainer(props) {
       const shop = shops.find(x => x.name === shopName);
       return props.onClickFunction(shop)
     };
-    const listItems = shops.map((shop) => (
+    const listItems = shops.map((shop, index) => (
       <div key={shop.name} onClick={handleClick} data-name={shop.name}>
-          <ListItem shop={shop} activeShop={props.activeShop}></ListItem>
+          <ListItem shop={shop} index={index} activeShop={props.activeShop}></ListItem>
       </div>
     ));
     return (

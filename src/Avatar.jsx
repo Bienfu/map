@@ -6,7 +6,7 @@ function Avatar(props) {
     
     return (
       <div class="Avatar">
-        <img class="AvatarImage" src={img}/>
+        <div class="circle">{img}</div>
       </div>
     );
   }
